@@ -15,22 +15,22 @@ public class ArticleController {
 
     private final ArticleService articleService; //서비스 계층 의존성주입
 
-    @PostMapping("/api/v1/articles")
+    @PostMapping("/articles")
     public ResponseEntity<Long> writeArticle(@RequestBody Article article) {
         return ResponseEntity.status(201).body(articleService.writeArticle(article));
     } // 게시글 작성에 필요한
 
-    @GetMapping("/api/v1/article/{articleId}")
+    @GetMapping("/article/{articleId}")
     public ResponseEntity<Article> getArticle(@PathVariable Long articleId) {
         return ResponseEntity.ok(articleService.findById(articleId));
     }
 
-    @GetMapping("/api/v1/articles")
+    @GetMapping("/articles")
     public ResponseEntity<List<Article>> getAllArticles() {
         return ResponseEntity.ok(articleService.findAll());
     }
 
-    @GetMapping("/api/v1/articles/search")
+    @GetMapping("/articles/search")
     public ResponseEntity<List<Article>> searchArticles(@RequestParam String title) {
         return ResponseEntity.ok(articleService.findByTitle(title));
     }

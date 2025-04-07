@@ -1,6 +1,7 @@
 package mutsaweek2.demo.repository;
 
 import jakarta.persistence.EntityManager;
+import lombok.Getter;
 import mutsaweek2.demo.Article;
 import org.springframework.stereotype.Repository;
 
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 @Repository
+@Getter
 public class ArticleRepository {
     /*Repository class에 포함해야할것
     1. 데이터베이스 연결 설정(여기서는 HaspMap기능 사용) or entitymanager 선언

@@ -13,7 +13,7 @@ public class ArticleService {
     /*
     게시글 작성, 목록 조회, 게시글 단건 조회
      */
-    private ArticleRepository articleRepository;
+    private final ArticleRepository articleRepository;
 
     public long writeArticle(Article article) {
         return articleRepository.save(article);
@@ -25,6 +25,10 @@ public class ArticleService {
 
     public Article findById(long id) {
         return articleRepository.findById(id);
+    }
+
+    public List<Article> findAll() {
+        return articleRepository.findAll();
     }
 
 }
